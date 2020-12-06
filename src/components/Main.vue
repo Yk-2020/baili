@@ -183,7 +183,7 @@ export default {
 <style>
 #main {
     padding: 30px;
-    width: 1800px;
+    width: 90%;
     margin: 0 auto;
 }
 
