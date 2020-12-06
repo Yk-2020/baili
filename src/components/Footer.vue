@@ -1,11 +1,11 @@
 <template>
 <div id="Footer">
     <div class="footer-top">
-        <h1>Sign up for our Newsletter!</h1>
+        <!--<h1>Sign up for our Newsletter!</h1>
         <div class="input-box">
             <input type="text" placeholder="Your email address">
             <div class="button">SING UP</div>
-        </div>
+        </div> -->
     </div>
     <div class="footer-mid">
         <ul>
@@ -71,6 +71,7 @@ export default {
 }
 
 #Footer .footer-top {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -96,7 +96,56 @@ import {
 export default {
     data() {
         return {
-            testimonials: [],
+            testimonials: [
+                {testimonials:`
+                    <p>i found a phone in the Black for<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+                {testimonials:`
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+                {testimonials:`
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+                {testimonials:`
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+                {testimonials:`
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+                {testimonials:`
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                    <p>111<p>
+                `},
+            ],
             scene: [],
             estimonialsAction: 0
         }
@@ -104,12 +153,12 @@ export default {
     mounted() {
         selectTestimonials({}).then(res => {
             if (res.isSuccess) {
-                this.testimonials = res.data
+                //this.testimonials = res.data
             }
         })
         selectScene({}).then(res => {
             if (res.isSuccess) {
-                this.scene = JSON.parse(res.data[0].scene)
+                //this.scene = JSON.parse(res.data[0].scene)
             }
         })
     },

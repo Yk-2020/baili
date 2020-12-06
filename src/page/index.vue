@@ -16,7 +16,13 @@
             
             </div>
         </el-backtop>
-        <Header :headerData="headerData" :height="800" :link="'Goods'"></Header>
+        <Header :headerData="headerData" :height="800" >
+            <h1>
+                The Trails Are Calling
+            </h1>
+            <p>Cool weather, fall foliage, and more time to spend outside with your crew? Sounds like the perfect time to take a hike.</p>
+            <el-button @click="fnHome" >Explore More</el-button>
+        </Header>
         <Carousel :CarouselList="CarouselList"></Carousel> 
         <Main></Main>
         <Footer></Footer>
@@ -40,10 +46,18 @@ export default {
                 {path:require('../assets/images/Carouse4.jpg'),type:'img'},
                 {path:require('../assets/images/Carouse5.jpg'),type:'img'},
             ],
+            
         }
     },
     mounted(){
         
+    },
+    methods:{
+        fnHome() {
+            this.$router.push({
+                    name: 'Goods'
+                })
+        }
     }
 }
 </script>

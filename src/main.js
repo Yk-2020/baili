@@ -11,7 +11,10 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 Vue.config.productionTip = false
-
+router.afterEach((to, from, next) => {
+  document.documentElement.scrollTop = document.body.scrollTop = 0;
+  window.scrollTo(0, 0);
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

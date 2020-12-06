@@ -16,7 +16,11 @@
             
             </div>
         </el-backtop>
-        <Header :headerData="headerData"></Header>
+        <Header :headerData="headerData">
+            <div style="width: 100%;
+    height: 100%;" @click="fnHome">
+            </div>
+        </Header>
         <el-container>
             <el-aside width="200px" >
                 <ul class="aside-box">
@@ -72,7 +76,7 @@ export default {
     components:{Header},
     data(){
         return{
-            headerData:{url:require('../assets/images/Header.jpg')},
+            headerData:{url:require('../assets/images/goodsHeader.jpg')},
             num:'',
             page:1,
             pageCount:0,
@@ -81,6 +85,11 @@ export default {
     },
 
     methods:{
+        fnHome(){
+            this.$router.push({
+                    path: '/'
+                })
+        },
         fnDetail(data){
             let routeData = this.$router.resolve({
                 name: "Detail",

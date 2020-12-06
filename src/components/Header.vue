@@ -1,33 +1,19 @@
 <template>
 <div id="Header" :style="{backgroundImage:'url(' + headerData.url + ')',height:height?height+'px':'320px'}" >
-    <h1>
-        The Trails Are Calling
-    </h1>
-    <p>Cool weather, fall foliage, and more time to spend outside with your crew? Sounds like the perfect time to take a hike.</p>
-    <el-button @click="fnHome" >Explore More</el-button>
+    <slot></slot>
 </div>
 </template>
 
 <script>
 export default {
-    props: ['headerData', 'height', 'link'],
+    props: ['headerData', 'height' ],
     data() {
         return {
 
         }
     },
     methods: {
-        fnHome() {
-            if (this._props.link) {
-                this.$router.push({
-                    name: this._props.link
-                })
-            } else {
-                this.$router.push({
-                    path: '/'
-                })
-            }
-        }
+      
     }
 }
 </script>
