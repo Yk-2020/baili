@@ -1,7 +1,16 @@
 <template>
 <div id="Footer">
     <div class="footer-top">
-        <!--<h1>Sign up for our Newsletter!</h1>
+        <span>
+            <i class="iconfont icon-icon_facebook" @click="fnLink('http://www.facebook.com')"></i>
+            <i class="iconfont icon-tuite" @click="fnLink('http://www.twitter.com/')"></i>
+            <i class="iconfont icon-linkedin" @click="fnLink('https://www.linkedin.com/')"></i>
+        </span>
+        <span>
+            <i class="iconfont icon-youjian"></i>
+            <span class="email">info@marvelous-outdoor.com</span>
+        </span>
+        <!-- <h1>Sign up for our Newsletter!</h1>
         <div class="input-box">
             <input type="text" placeholder="Your email address">
             <div class="button">SING UP</div>
@@ -15,8 +24,8 @@
             </ol>
             <li>Home</li>
             <li>Contact</li>
-            <li>Shop</li>
-            <li>Blog</li>
+            <li>Products</li>
+            <li>Solutions </li>
         </ul>
         <ul>
             <ol>
@@ -42,14 +51,17 @@
         </ul>
         <ul>
             <ol>
-                <span>SINCE '73</span>
+                <span>SINCE 1980</span>
                 <div></div>
             </ol>
             <p>
-                We have been making packs that have you prepared for whatever lift throws at you.
+                We are committed to improving users' experience of outdoor activities.
             </p>
             <p>
-                When we say Pack For Life,we mean it.
+                We are focused on making outdoor products more safety, comfortable and easy to use.
+            </p>
+            <p>
+                When we say MARVELOUS ,we mean it!
             </p>
         </ul>
     </div>
@@ -61,7 +73,11 @@
 
 <script>
 export default {
-
+    methods:{
+        fnLink(url){
+            window.open(url, '_blank')
+        }
+    }
 }
 </script>
 
@@ -79,7 +95,16 @@ export default {
     background: #F1B11D;
     padding: 0 40px
 }
-
+#Footer .footer-top .iconfont{
+    font-size: 20px;
+    color: #000;
+    margin-right: 10px;
+}
+#Footer .footer-top .email{
+    color: #000;
+    border-bottom:  1px solid #000;
+    margin-left: 5px;
+}
 #Footer .footer-top h1 {
     font-size: 20px;
     font-weight: bold;

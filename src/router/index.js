@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/page/index'
 import Goods from '@/page/goods'
 import Detail from '@/page/detail'
+import INTRODUCE from '@/page/Introduce'
 Vue.use(Router)
 
 export default new Router({
@@ -22,5 +23,10 @@ export default new Router({
       name: 'Detail',
       component: Detail
     },
+    {
+      path: '/INTRODUCE',
+      name: 'INTRODUCE',
+      component: INTRODUCE 
+    }
   ]
 })

@@ -71,7 +71,6 @@
 
 <script>
 import Header from '@/components/Header'
-import {goodsSelect} from '@/request/api'
 export default {
     components:{Header},
     data(){
@@ -102,23 +101,11 @@ export default {
         },
         uploadPage(num){
           let _this = this
-          goodsSelect({page:num,pageSize:10,type:_this.$route.params.type,specs:_this.$route.params.specs}).then(res=>{
-            if(res.isSuccess){
-              _this.pageCount = res.count
-              this.goods = res.data
-              console.log(JSON.parse(res.data[0].goodsFile)[0].path)
-            }
-          })
+          
         },
         fnUpload(type,specs){
             let _this = this
-            goodsSelect({page:1,pageSize:10,type:type,specs:specs}).then(res=>{
-                if(res.isSuccess){
-                _this.pageCount = res.count
-                this.goods = res.data
-                console.log(JSON.parse(res.data[0].goodsFile)[0].path)
-                }
-            })
+            
         }
     },
     watch:{

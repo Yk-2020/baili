@@ -32,26 +32,32 @@
                 </el-col>
                 <el-col :span="12" class="right-col" >
                     <div @click="fnLink('TENTS','7+')">
-                        <h1>7+<i class="el-icon-s-custom"></i></h1>
-                        <div class="link">show for 7+</div>
+                        <h1><i class="el-icon-s-custom"></i>+</h1>
+                        <div class="link">More</div>
                     </div>
                 </el-col>
             </el-row>
         </el-col>
     </el-row>
     <el-row class="item-2">
-        <el-col :span="8" class="item-box" @click="fnLink('LIGHTING')">
-            <img src="../assets/images/LIGHTING.jpg" alt="">
-            <span class="title">LIGHTING</span>
+        <el-col :span="6" class="item-box" @click="fnLink('CRILLS')">
+            <img src="../assets/images/Coffee_maker.jpg" alt="">
+            <span class="title">Coffee maker</span>
         </el-col>
-        <el-col :span="8" class="item-box" @click="fnLink('CRILLS')">
-            <img src="../assets/images/CRILLS.jpg" alt="">
-            <span class="title">CRILLS</span>
-        </el-col>
-        <el-col :span="8" class="item-box" @click="fnLink('COOLERS')">
+        <el-col :span="6" class="item-box" @click="fnLink('COOLERS')">
 
-            <img src="../assets/images/COOLERS.jpg" alt="">
-            <span class="title">COOLERS</span>
+            <img src="../assets/images/Grill.png" alt="">
+            <span class="title">Grill</span>
+        </el-col>
+        <el-col :span="6" class="item-box" @click="fnLink('COOLERS')">
+
+            <img src="../assets/images/Table_Chair.jpg" alt="">
+            <span class="title">Table & Chair</span>
+        </el-col>
+        <el-col :span="6" class="item-box" @click="fnLink('COOLERS')">
+
+            <img src="../assets/images/Hammock.jpg" alt="">
+            <span class="title">Hammock</span>
         </el-col>
     </el-row>
     <el-row class="item-3">
@@ -65,16 +71,14 @@
         <el-col :span="14" class="right-item"></el-col>
     </el-row>
     <el-row class="item-4">
-        <h1>Show Us you Campsite<span>#GetOutdoors</span></h1>
+        <h2>WHY CUSTOMER CHOOSE<span>“MARVELOUS”</span></h2>
+        <div class="link"></div>
         <div>
             <el-col :span="6" v-for="(v,i) in scene" :key="i" class="col"><img :src="v.path" alt=""></el-col>
         </div>
     </el-row>
     <el-row class="item-5">
-        <h2>#PACKFORLIFE</h2>
-        <h1>
-            TESTIMONIALS
-        </h1>
+        
         <div class="carousel-box">
             <div class="carousel-item" v-for="(v,i) in testimonials" v-show="i>=estimonialsAction*3&&i<(estimonialsAction+1)*3" :key="i">
                 <div v-html="v.testimonials">
@@ -89,78 +93,50 @@
 </template>
 
 <script>
-import {
-    selectTestimonials,
-    selectScene
-} from '@/request/api'
+
 export default {
     data() {
         return {
+            scene:[
+                {path:require('../assets/images/Footimg1.png')},
+                {path:require('../assets/images/Footimg2.jpg')},
+                {path:require('../assets/images/Footimg3.jpg')},
+                {path:require('../assets/images/Footimg4.jpg')}
+
+            ],
             testimonials: [
                 {testimonials:`
-                    <p>i found a phone in the Black for<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>YEARS  PRODUCTION  EXPERIENCE</h4>
+                    <p>We have many years experience for camping products production and marketing, all of our staffs and sales team also have rich experience to make sure we can meet any requirement from our customers.</p>
                 `},
                 {testimonials:`
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>R&D ABILITY</h4>
+                    <p>We have our own R&D department for developing new products, we welcome any new design or new products type from our customers.</p>
                 `},
                 {testimonials:`
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>HIGH QAULITY PRODUCTS</h4>
+                    <p>We always keep our eye on the products quality and packing safety, we have inspection team for inspecting every products to make sure we can offer high quality camping products.</p>
                 `},
                 {testimonials:`
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>HIGH QAULITY PRODUCTS</h4>
+                    <p>We always keep our eye on the products quality and packing safety, we have inspection team for inspecting every products to make sure we can offer high quality camping products.</p>
                 `},
                 {testimonials:`
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>GOOD COMMUNICATION</h4>
+                    <p>Our sales team have rich experience on camping products, we can exactly understand what our customer want and what should we do for them. Customer satisfaction is our biggest priority</p>
                 `},
                 {testimonials:`
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
-                    <p>111<p>
+                    <h4>GOOD After SERVICE</h4>
+                    <p>We offer our good after sell service , not only on camping products but also on any requirement raise by the customers.</p>
                 `},
             ],
-            scene: [],
+            
             estimonialsAction: 0
         }
     },
     mounted() {
-        selectTestimonials({}).then(res => {
-            if (res.isSuccess) {
-                //this.testimonials = res.data
-            }
-        })
-        selectScene({}).then(res => {
-            if (res.isSuccess) {
-                //this.scene = JSON.parse(res.data[0].scene)
-            }
-        })
+        
+        
     },
     methods: {
         fnLink(type, specs) {
@@ -186,6 +162,7 @@ export default {
     width: 90%;
     margin: 0 auto;
 }
+
 
 #main .item-box {
     display: flex;
@@ -366,23 +343,34 @@ export default {
 
 #main .item-4 {
     margin-top: 20px;
+    margin-bottom:20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
-
-#main .item-4 h1 {
+#main .item-4 .link{
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 10px;
+}
+#main .item-4 h2 {
     margin-bottom: 20px;
     font-size: 20px;
+    background: #fff;
+    z-index: 9;
+    padding: 0 10px;
 }
 
-#main .item-4 h1 span {
+#main .item-4 h2 span {
     color: #A1415A
 }
 
 #main .item-4 .col img {
-    width: 100%;
+    width:99%;
     height: 223px;
 }
 
@@ -390,13 +378,16 @@ export default {
     display: flex;
     justify-content: space-around;
     position: relative;
-    height: 200px;
+    height: 140px;
 }
 
 #main .item-5 .carousel-item {
     width: 33%;
     padding: 10px;
     height: 100%;
+}
+#main .item-5 .carousel-item p{
+    font-size: 12px;
 }
 
 #main .item-5 .carousel-box .btn-box {
@@ -420,5 +411,56 @@ export default {
 
 #main .item-5 .carousel-box .btn-box .Action {
     background: #000;
+}
+@media screen and (max-width: 1200px) {
+    #main {
+        padding: 30px;
+        width: 999px;
+        margin: 0 auto;
+    }
+    #main .item-3 {
+    height: 350px;
+    }
+}
+
+@media screen and (max-width: 1870px) {
+    #main {
+    padding: 30px;
+    width: 1414px;
+    margin: 0 auto;
+    }
+    #main .item-1, #main .item-3 {
+        height: 350px;
+    }
+    #main .item-box img {
+        height: 300px;
+    }
+}
+@media screen and (max-width: 1654px) {
+    #main {
+    padding: 30px;
+    width: 1198px;
+    margin: 0 auto;
+    }
+    #main .item-1, #main .item-3 {
+        height: 450px;
+    }
+    #main .item-box img {
+        height: 260px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    #main {
+        padding: 30px;
+        width: 999px;
+        margin: 0 auto;
+    }
+    #main .item-1, #main .item-3 {
+        height: 350px;
+    }
+    #main .item-box img {
+        height: 220px;
+    }
+    
 }
 </style>

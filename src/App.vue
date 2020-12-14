@@ -25,4 +25,7 @@ h1,h2,h3,h4,h5,p{
 ul,li,ol{
   padding:0;margin:0;list-style:none
 }
+ .el-menu.el-menu--horizontal{
+        border:none
+    }
 </style>
