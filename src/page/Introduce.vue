@@ -1,8 +1,5 @@
 <template>
   <div class="introduce-box">
-    <Header :headerData="headerData">
-            <div style="width: 100%;height: 100%;" @click="fnHome"></div>
-    </Header>
     <ul class="navs">
       <li :class="{active: active===0}"  @click="scrollTo(0)">
         INTRODUCE IN BRIEF
@@ -21,71 +18,47 @@
     <div class="content">
       <div id="0">
         <h1>INTRODUCE IN BRIEF</h1>
-        <img src="../assets/images/introduce.png" alt="">
+        <img src="../assets/images/introduce1.png" alt="">
         <p>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-
+          “MARVELOUS” is an outdoor products factory with a long history and innovative ideas .We are committed to the camping safety, comfort and easily use of all our products,we have professional partners and distributors in every country of the world.
+        </p>
+        <p>
+          “MARVELOUS”s goal is to make our products available in most parts of the world and make 
+        </p>
+        <p>
+          MARVELOUS products available to all our customers for their joy and freedom!
         </p>
       </div>
       <div id="1">
-        <h1>OUR HISTORY</h1>
+        <h4>OUR HISTORY</h4>
+         <img src="../assets/images/introduce2.png" alt="">
         <p>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-
+          “MARVELOUS” is a family owned business that specializes in the design and production of outdoor tents since 1980.
+        </p>
+        <br/>
+        <p>
+          Brand founder Mr. DAVID is a aficionado of outdoor sports and camping activity. One day,he decided to have one own company to share his outdoor experience and camping equipment, and he also decide to improve the traditional tent by himself to make them more comfortable and safety......
+After decades of development, from a small factory with only a few square meters, it has developed to thousands of square factories in China.
         </p>
       </div>
       <div id="2">
-        <h1>OUR COMPANY</h1>
-        <p>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-        </p>
+        <h4>OUR COMPANY</h4>
+         <h5>REARCH & DEVELOPMENT</h5>
+          <p>
+            We have a 5-8 people design team in Factory, our products will be from the appearance design, structural design to the raw materials choosing , color matching, and to safety testing, environmental testing...every necessary parts are all strictly controlled by our design team.
+          </p>
+        <h5>SALES CHANNELS</h5>
+          <p>
+            We sell our products through our product sales team and overseas distributors.
+We hope and welcome more customers to establish in-depth cooperation with us, we will give the biggest supporting , to create a win-win situation with our partners.
+          </p>
       </div>
       <div id="3">
-        <h1>OUR DREAM</h1>
-        <p>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-           x <br/>
-
+        <h4>OUR DREAM</h4>
+        <p>“CUSTOMER FIRST”</p>
+        <p>    
+Marvelous will always put customers' demanding and camping experience in the first place. In the future, Marvelous will devote ourselves to more new camping products R&D and innovation to spread our brand to every corner of the world.
+At the same time, provide more value service to our partners and make WIN-WIN cooperation.
         </p>
       </div>
     </div>   
@@ -191,12 +164,13 @@ export default {
   .introduce-box{
       display: flex;
       justify-content: flex-end;
-
+      width: 600px;
+      margin: 0 auto;
   }
   /* 内容区的样式 */
   .content {
     background-color: white;
-    width: calc(100% - 300px);
+    
   }
   .content div {
     width: 100%;
@@ -204,18 +178,44 @@ export default {
     padding: 20px;
     
   }
-  .content h1,.content p{
+  .content h1,.content h4,.content p{
+    color: #000;
+  }
+  .content h1{
+    font-family:Arial,Verdana,Sans-serif;
+    font-weight:900;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .content h4{
+      margin-bottom: 10px;
       text-align: left;
   }
-  
+  .content h5{
+      text-align: left;
+      color:blue;
+      margin-bottom: 10px;
+      margin-left: 20px;
+  }
+  .content p{
+    text-align: left;
+    padding:0 30px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .content img{
+    width: 300px;
+    margin: 20px 0;
+  }
   /* 导航栏的样式 */
   .navs {
+    padding: 10px 0;
     position: fixed;
-    left: 0;
+    left: calc(50% - 550px);
     height: 100%;
-    width: 300px;
-    color: #FFF;
-    background: rgb(61, 56, 53);
+    width: 220px;
+    color: #000;
+    background: #FFF;
     
   }
   .navs li {
@@ -224,10 +224,14 @@ export default {
     align-items: center;
     height: 40px;
     font-size: 16px;
+    font-family: Calibri;
+    font-weight: bold;
   }
   /* 当导航被点亮后改变颜色 */
   .navs .active{
-    color: #FFF;
-    background-color:  rgb(45, 41, 38);
+    color: #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background: rgba(199, 198, 198, 0.034);
+    border-radius: 30px;
   }
 </style>
